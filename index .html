@@ -1,0 +1,380 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="public/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Cafe Mysteria – Dinner, Games & Good Times in Varanasi. A premium cafe and social hangout space with gourmet food, signature drinks, and curated board and card games." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <title>Cafe Mysteria Landing Page</title>
+    <link rel="stylesheet" href="style.css" />
+    <meta property="og:image" content="https://bolt.new/static/og_default.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="https://bolt.new/static/og_default.png">
+</head>
+  <body>
+    <!-- ===================== NAVBAR ===================== -->
+    <header id="navbar">
+      <nav class="nav container">
+        <a href="#hero" class="logo" aria-label="Cafe Mysteria home">
+        <img src="Images/logo.png" alt="Cafe Mysteria Logo" class="logo-img">
+        <span class="logo-text">Cafe Mysteria</span>
+      </a>
+
+        <ul class="nav-links" id="navLinks">
+          <li><a href="#about">About</a></li>
+          <li><a href="#menu">Food &amp; Drinks</a></li>
+          <li><a href="#games" class="gaming-link">Gaming</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#why">Why Us</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+
+        <div class="nav-actions">
+          <a href="#contact" class="btn btn-ghost">Reserve</a>
+          <a href="#contact" class="btn btn-gold">Book a Table</a>
+          <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </nav>
+    </header>
+
+    <!-- ===================== HERO ===================== -->
+    <section id="hero" class="hero">
+      <div class="hero-bg"></div>
+      <div class="hero-aurora"></div>
+      <div class="hero-aurora hero-aurora-2"></div>
+      <div class="hero-grid"></div>
+      <div class="hero-overlay"></div>
+      <div class="spotlight" id="spotlight"></div>
+      <div class="hero-content container reveal">
+        <span class="eyebrow">Varanasi &middot; Premium Cafe &amp; Social Lounge</span>
+        <h1>Dinner, Games<br />&amp; <em>Good Times</em></h1>
+        <p class="hero-sub">
+          A warm-lit retreat where gourmet food, handcrafted drinks, and your
+          favourite board games come together. Come for dinner, stay for the fun.
+        </p>
+        <div class="hero-cta">
+          <a href="#contact" class="btn btn-gold btn-lg">Book Your Table</a>
+          <a href="#menu" class="btn btn-ghost btn-lg">Explore the Menu</a>
+        </div>
+        <div class="hero-stats">
+          <div class="stat"><span class="stat-num">4.8</span><span class="stat-label">Avg. Rating</span></div>
+          <div class="stat-divider"></div>
+          <div class="stat"><span class="stat-num">20+</span><span class="stat-label">PC Rigs</span></div>
+          <div class="stat-divider"></div>
+          <div class="stat"><span class="stat-num">2.5K+</span><span class="stat-label">Followers</span></div>
+        </div>
+      </div>
+      <a href="#about" class="scroll-hint" aria-label="Scroll down">
+        <span class="mouse"><span class="wheel"></span></span>
+      </a>
+    </section>
+
+    <!-- ===================== ABOUT ===================== -->
+    <section id="about" class="section about">
+      <div class="container about-grid">
+        <div class="about-media reveal">
+          <img src="./Images/hero.webp" alt="Warm-lit cafe interior with candles and greenery" loading="lazy" />
+          <div class="about-badge glass">
+            <span class="about-badge-title">Since 2021</span>
+            <span class="about-badge-sub">Varanasi's favourite hangout</span>
+          </div>
+        </div>
+        <div class="about-text reveal">
+          <span class="eyebrow">About Cafe Mysteria</span>
+          <h2>A stylish escape where food meets play</h2>
+          <p>
+            Tucked away in the heart of Varanasi, Cafe Mysteria is a modern luxury
+            lounge built for slow evenings and long conversations. We blend the
+            warmth of a fine restaurant with the easy joy of game night &mdash; no
+            rush, no noise, just good company.
+          </p>
+          <p>
+            Curated lighting, plush seating, a kitchen that takes dinner seriously,
+            and a lounge of high-end PC rigs. Whether you're on a date, with
+            friends, or flying solo, there's a table waiting for you.
+          </p>
+          <ul class="about-list">
+            <li><span class="check">&check;</span> Handcrafted food &amp; signature drinks</li>
+            <li><span class="check">&check;</span> 20+ high-performance PC rigs</li>
+            <li><span class="check">&check;</span> Cosy, warm-lit ambience</li>
+            <li><span class="check">&check;</span> Open till late, every day</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== FOOD & DRINKS ===================== -->
+    <section id="menu" class="section menu">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Food &amp; Drinks</span>
+          <h2>Crafted to savour, designed to share</h2>
+          <p class="section-sub">From loaded burgers to latte art &mdash; every plate and pour is made fresh, plated with care.</p>
+        </div>
+
+        <div class="menu-grid">
+          <article class="menu-card glass reveal">
+            <div class="menu-img"><img src="./Images/sandwichmys.webp" /></div>
+            <div class="menu-body">
+              <h3>Signature Sandwich</h3>
+              <p>Juicy patties, melted cheese, house sauces &mdash; stacked high on a toasted brioche bread.</p>
+              <span class="menu-tag">Chef's Pick</span>
+            </div>
+          </article>
+
+          <article class="menu-card glass reveal">
+            <div class="menu-img"><img src="./Images/coffeemys.webp" /></div>
+            <div class="menu-body">
+              <h3>Artisan Coffee</h3>
+              <p>Single-origin beans pulled to perfection &mdash; cappuccinos, lattes, and cold brews.</p>
+              <span class="menu-tag">Freshly Brewed</span>
+            </div>
+          </article>
+
+          <article class="menu-card glass reveal">
+            <div class="menu-img"><img src="./Images/mockmys.webp" /></div>
+            <div class="menu-body">
+              <h3>Signature Mocktails</h3>
+              <p>Handcrafted blends of fresh fruit, herbs, and sparkle &mdash; built for long evenings.</p>
+              <span class="menu-tag">Bar Favourite</span>
+            </div>
+          </article>
+
+          <article class="menu-card glass reveal">
+            <div class="menu-img"><img src="./Images/foodmys.webp"/></div>
+            <div class="menu-body">
+              <h3>Contemporary Plates</h3>
+              <p>Pasta, sides, and small plates designed for sharing across the table.</p>
+              <span class="menu-tag">Shareable</span>
+            </div>
+          </article>
+
+          <article class="menu-card glass reveal">
+            <div class="menu-img"><img src="./Images/desemys.webp" /></div>
+            <div class="menu-body">
+              <h3>Dessert Selection</h3>
+              <p>House-made sweets to close the night &mdash; chocolate, caramel, and everything nice.</p>
+              <span class="menu-tag">Sweet Endings</span>
+            </div>
+          </article>
+
+          <article class="menu-card glass reveal">
+            <div class="menu-img"><img src = "Images/int.webp" /></div>
+            <div class="menu-body">
+              <h3>Late-Night Bites</h3>
+              <p>Snacks, fries, and finger food that keep the table going well past midnight.</p>
+              <span class="menu-tag">Open Late</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== GAMING ===================== -->
+    <section id="games" class="section games">
+      <div class="games-bg"></div>
+      <div class="games-grid-overlay"></div>
+      <div class="games-glow"></div>
+      <div class="container">
+        <div class="games-grid">
+          <div class="games-text reveal">
+            <span class="eyebrow games-eyebrow">PC Gaming Lounge</span>
+            <h2>Dinner first. <em>Then game on.</em></h2>
+            <p>
+              Our gaming lounge is wired with high-performance rigs, fast refresh
+              displays, and RGB-lit setups &mdash; tucked inside the same warm, cafe
+              atmosphere. Order dinner, settle into a rig, and let the night take
+              its course.
+            </p>
+            <ul class="games-list">
+              <li><strong>20+ High-End PC Rigs</strong><span>RTX graphics, high-refresh monitors, and mechanical keyboards &mdash; built for smooth play.</span></li>
+              <li><strong>100+ Game Library</strong><span>From co-op to competitive &mdash; Valorant, CS2, GTA V, Minecraft and more, ready to launch.</span></li>
+              <li><strong>Squad Seating</strong><span>Reserve adjacent rigs for your crew and play together, side by side.</span></li>
+              <li><strong>Food &amp; Drinks at Your Rig</strong><span>Snacks and drinks served to your seat &mdash; no pausing the fun.</span></li>
+            </ul>
+            <a href="#contact" class="btn btn-neon">Reserve a Rig</a>
+          </div>
+          <div class="games-media reveal">
+            <img src="Images/gamingmys.webp" />
+            <img class="games-media-sm" src="./Images/gaming - Copy.webp" alt="Group gaming at a cyber cafe" loading="lazy" />
+          </div>
+        </div>
+
+        <div class="games-specs reveal">
+          <div class="spec"><span class="spec-num" data-count="165" data-suffix="Hz">0</span><span class="spec-label">Refresh Displays</span></div>
+          <div class="spec"><span class="spec-num" data-count="1" data-suffix="Gbps">0</span><span class="spec-label">Fibre Internet</span></div>
+          <div class="spec"><span class="spec-num" data-count="100" data-suffix="+">0</span><span class="spec-label">Game Titles</span></div>
+          <div class="spec"><span class="spec-num" data-count="20" data-suffix="+">0</span><span class="spec-label">PC Rigs</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== GALLERY ===================== -->
+    <section id="gallery" class="section gallery">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Gallery</span>
+          <h2>A look inside the mood</h2>
+          <p class="section-sub">Warm light, good plates, and the quiet hum of a full house.</p>
+        </div>
+        <div class="gallery-grid">
+          <figure class="gallery-item reveal g-tall"><img src="./Images/veiw1.webp" /></figure>
+          <figure class="gallery-item reveal"><img src="./Images/view3.webp" /></figure>
+          <figure class="gallery-item reveal"><img src="./Images/view4.webp" /></figure>
+          <figure class="gallery-item reveal g-wide"><img src="./Images/view5.webp" /></figure>
+          <figure class="gallery-item reveal g-tall"><img src="./Images/view6.webp" /></figure>
+          <figure class="gallery-item reveal"><img src="./Images/view7.webp"/></figure>
+          <figure class="gallery-item reveal"><img src="./Images/view9.webp" /></figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== WHY CHOOSE US ===================== -->
+    <section id="why" class="section why">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Why Choose Us</span>
+          <h2>The Mysteria difference</h2>
+          <p class="section-sub">Six reasons our guests keep coming back.</p>
+        </div>
+        <div class="why-grid">
+          <article class="why-card glass reveal"><div class="why-icon">&#9733;</div><h3>Premium Ambience</h3><p>Warm lighting, plush seating, and a soundscape designed for easy conversation.</p></article>
+          <article class="why-card glass reveal"><div class="why-icon">&#9749;</div><h3>Fresh Kitchen</h3><p>Every dish is made to order &mdash; no shortcuts, no reheats, just real food.</p></article>
+          <article class="why-card glass reveal"><div class="why-icon">&#127918;</div><h3>PC Gaming Lounge</h3><p>20+ high-end rigs with RTX graphics, fast-refresh displays, and a 100+ game library.</p></article>
+          <article class="why-card glass reveal"><div class="why-icon">&#128329;</div><h3>Signature Drinks</h3><p>Mocktails and coffee crafted with the same care as our kitchen.</p></article>
+          <article class="why-card glass reveal"><div class="why-icon">&#128337;</div><h3>Open Till Late</h3><p>Perfect for after-work unwind or a late-night hangout with the crew.</p></article>
+          <article class="why-card glass reveal"><div class="why-icon">&#128205;</div><h3>Heart of Varanasi</h3><p>Centrally located and easy to reach &mdash; your go-to spot, any day of the week.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== INSTAGRAM ===================== -->
+    <section id="instagram" class="section instagram">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="eyebrow">Our Community</span>
+          <h2>Join 2,500+ on Instagram</h2>
+          <p class="section-sub">Tag <strong>@cafemysteria</strong> in your nights out &mdash; we love to share them.</p>
+          <a href="https://www.instagram.com/mysteria.ig/" target="_blank" rel="noopener noreferrer" class="btn btn-gold btn-lg follow-btn">Follow @mysteria.ig</a>
+        </div>
+        <div class="ig-grid">
+          <figure class="ig-item reveal"><img src="./Images/tagmys.webp" /><span class="ig-handle">@mysteria.ig</span></figure>
+          <figure class="ig-item reveal"><img src="./Images/tag2mys.webp" /><span class="ig-handle">@mysteria.ig</span></figure>
+          <figure class="ig-item reveal"><img src="./Images/tag3mys.webp" /><span class="ig-handle">@mysteria.ig</span></figure>
+          <figure class="ig-item reveal"><img src="./Images/tag4mys.webp" /><span class="ig-handle">@mysteria.ig</span></figure>
+          <figure class="ig-item reveal"><img src="./Images/tag5mys.webp" /><span class="ig-handle">@mysteria.ig</span></figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== CONTACT ===================== -->
+    <section id="contact" class="section contact">
+      <div class="contact-bg"></div>
+      <div class="container contact-grid">
+        <div class="contact-info reveal">
+          <span class="eyebrow">Visit Us</span>
+          <h2>Reserve your evening</h2>
+          <p>Drop by, or message us on WhatsApp to book a table or a game night. We'll hold your spot.</p>
+
+          <ul class="contact-list">
+            <li><span class="ci-label">Location</span><span class="ci-value">First Floor, Plot no B27/93-D-A, above Royal Jewellers, near Murikatta Baba Mandir, Bhelupur, Varanasi, Uttar Pradesh 221005</span></li>
+            <li><span class="ci-label">Hours</span><span class="ci-value">Mon&ndash;Sun &middot; 11:00 AM &ndash; 10:00 PM</span></li>
+            <li><span class="ci-label">Phone</span><span class="ci-value">+91 95111 19561</span></li>
+            <li><span class="ci-label">Email</span><span class="ci-value">hello@cafemysteria.in</span></li>
+          </ul>
+
+          <div class="contact-cta">
+            <a href="https://wa.me/919000000000?text=Hi%20Cafe%20Mysteria%2C%20I%27d%20like%20to%20book%20a%20table" class="btn btn-whatsapp btn-lg" target="_blank" rel="noopener">
+              <span class="wa-icon">&#128241;</span> Chat on WhatsApp
+            </a>
+            <a href="tel:+919000000000" class="btn btn-gold btn-lg">Call to Book</a>
+          </div>
+        </div>
+
+        <form class="contact-form glass reveal" id="bookingForm" novalidate>
+          <h3>Book a Table</h3>
+          <div class="field">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" placeholder="Your name" required />
+          </div>
+          <div class="field">
+            <label for="phone">Phone</label>
+            <input type="tel" id="phone" name="phone" placeholder="+91 ..." required />
+          </div>
+          <div class="field-row">
+            <div class="field">
+              <label for="date">Date</label>
+              <input type="date" id="date" name="date" required />
+            </div>
+            <div class="field">
+              <label for="guests">Guests</label>
+              <select id="guests" name="guests" required>
+                <option value="">Select</option>
+                <option>1&ndash;2</option>
+                <option>3&ndash;4</option>
+                <option>5&ndash;6</option>
+                <option>7+</option>
+              </select>
+            </div>
+          </div>
+          <div class="field">
+            <label for="note">Note <span class="optional">(optional)</span></label>
+            <textarea id="note" name="note" rows="3" placeholder="Any requests? Game table, occasion, seating..."></textarea>
+          </div>
+          <button type="submit" class="btn btn-gold btn-lg btn-block">Request Reservation</button>
+          <p class="form-success" id="formSuccess">Thanks! We'll confirm your reservation on WhatsApp shortly.</p>
+        </form>
+      </div>
+    </section>
+
+    <!-- ===================== FOOTER ===================== -->
+    <footer class="footer">
+      <div class="container footer-grid">
+        <div class="footer-brand">
+          <span class="logo"><span class="logo-mark">CM</span><span class="logo-text">Cafe Mysteria</span></span>
+          <p>Dinner, Games &amp; Good Times &mdash; Varanasi's premium cafe and social lounge.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#menu">Food &amp; Drinks</a></li>
+            <li><a href="#games">Gaming</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Visit</h4>
+          <ul>
+            <li>Bhelupur Varanasi</li>
+            <li>11:00 AM &ndash; 10:00 PM</li>
+            <li>+91 90000 00000</li>
+            <li>hello@cafemysteria.in</li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Follow</h4>
+          <ul class="footer-social">
+            <li><a href="https://www.instagram.com/mysteria.ig/">Instagram</a></li>
+            <li><a href="#contact">WhatsApp</a></li>
+            <li><a href="#contact">Google Maps</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom container">
+        <span>&copy; <span id="year"></span> Cafe Mysteria. All rights reserved.</span>
+        <span>Crafted with care in Varanasi.</span>
+        <span>Built by Dev Narayan Aditya</span>
+      </div>
+    </footer>
+
+    <a href="https://wa.me/919000000000?text=Hi%20Cafe%20Mysteria" class="wa-float" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">&#128241;</a>
+
+    <script src="script.js"></script>
+  </body>
+</html>
