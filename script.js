@@ -167,3 +167,48 @@
     });
   });
 })();
+ 
+const chatbot = document.getElementById("chatbot");
+const chatbotToggle = document.getElementById("chatbotToggle");
+const closeChat = document.getElementById("closeChat");
+const chatbotBody = document.getElementById("chatbotBody");
+
+chatbotToggle.addEventListener("click", () => {
+  chatbot.style.display = "block";
+});
+
+closeChat.addEventListener("click", () => {
+  chatbot.style.display = "none";
+});
+
+function botReply(type) {
+  let response = "";
+
+  switch(type) {
+    case "timings":
+      response = "Cafe Mysteria is open daily from 11 AM to 11 PM.";
+      break;
+
+    case "gaming":
+      response = "We offer PC gaming and board games for visitors.";
+      break;
+
+    case "food":
+      response = "Enjoy snacks, beverages and delicious cafe favourites.";
+      break;
+
+    case "location":
+      response = "Cafe Mysteria is located in Varanasi.";
+      break;
+
+    case "instagram":
+      response = "Follow us on Instagram: @mysteria.ig";
+      break;
+  }
+
+  chatbotBody.innerHTML += `
+    <div class="bot-message">${response}</div>
+  `;
+
+  chatbotBody.scrollTop = chatbotBody.scrollHeight;
+}

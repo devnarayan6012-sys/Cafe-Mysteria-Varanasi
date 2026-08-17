@@ -375,6 +375,31 @@
 
     <a href="https://wa.me/919000000000?text=Hi%20Cafe%20Mysteria" class="wa-float" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">&#128241;</a>
 
+    <div class="chatbot-toggle" id="chatbotToggle">
+  💬
+</div>
+
+<div class="chatbot" id="chatbot">
+  <div class="chatbot-header">
+    Cafe Mysteria Assistant
+    <span id="closeChat">✕</span>
+  </div>
+
+  <div class="chatbot-body" id="chatbotBody">
+    <div class="bot-message">
+      Hi! How can I help you today?
+    </div>
+  </div>
+
+  <div class="quick-buttons">
+    <button onclick="botReply('timings')">⏰ Timings</button>
+    <button onclick="botReply('gaming')">🎮 Gaming</button>
+    <button onclick="botReply('food')">🍔 Food</button>
+    <button onclick="botReply('location')">📍 Location</button>
+    <button onclick="botReply('instagram')">📷 Instagram</button>
+  </div>
+</div>
+
     <script src="script.js"></script>
   </body>
 </html>
