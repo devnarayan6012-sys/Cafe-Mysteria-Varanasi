@@ -1,0 +1,825 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Events | Cafe Mysteria</title>
+
+  <meta
+    name="description"
+    content="Discover upcoming events and experiences at Cafe Mysteria, Varanasi."
+  />
+
+  <style>
+    :root {
+      --gold: #d4af37;
+      --gold-light: #f3d76b;
+      --gold-dark: #8f7420;
+
+      --black: #050505;
+      --black-2: #0b0b0b;
+      --card: rgba(18, 18, 18, 0.82);
+
+      --text: #f5f1e6;
+      --muted: rgba(245, 241, 230, 0.62);
+
+      --border: rgba(212, 175, 55, 0.22);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Inter, Arial, sans-serif;
+      background: var(--black);
+      color: var(--text);
+      line-height: 1.5;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+
+      background:
+        linear-gradient(
+          rgba(212, 175, 55, 0.025) 1px,
+          transparent 1px
+        ),
+        linear-gradient(
+          90deg,
+          rgba(212, 175, 55, 0.025) 1px,
+          transparent 1px
+        );
+
+      background-size: 45px 45px;
+
+      pointer-events: none;
+      z-index: -2;
+    }
+
+    body::after {
+      content: "";
+      position: fixed;
+
+      width: 600px;
+      height: 600px;
+
+      top: -250px;
+      right: -200px;
+
+      background: rgba(212, 175, 55, 0.08);
+
+      filter: blur(130px);
+      border-radius: 50%;
+
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      width: 100%;
+      display: block;
+    }
+
+
+    /* =========================
+       HEADER
+    ========================== */
+
+    .header {
+      width: 100%;
+      padding: 25px 6%;
+
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      border-bottom: 1px solid rgba(212, 175, 55, 0.12);
+
+      background: rgba(5, 5, 5, 0.72);
+
+      backdrop-filter: blur(15px);
+
+      position: sticky;
+      top: 0;
+
+      z-index: 50;
+    }
+
+    .logo {
+      font-size: 19px;
+      font-weight: 900;
+      letter-spacing: 2px;
+
+      color: var(--gold-light);
+    }
+
+    .back {
+      font-size: 13px;
+
+      color: var(--muted);
+
+      transition: 0.25s ease;
+    }
+
+    .back:hover {
+      color: var(--gold-light);
+    }
+
+
+    /* =========================
+       HERO
+    ========================== */
+
+    .hero {
+      min-height: 70vh;
+
+      padding: 110px 6% 90px;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+
+      position: relative;
+    }
+
+    .hero::before {
+      content: "";
+
+      position: absolute;
+
+      width: 420px;
+      height: 420px;
+
+      left: -180px;
+      top: 50px;
+
+      background: rgba(212, 175, 55, 0.08);
+
+      filter: blur(120px);
+
+      border-radius: 50%;
+    }
+
+    .eyebrow {
+      position: relative;
+
+      color: var(--gold);
+
+      font-size: 11px;
+
+      font-weight: 800;
+
+      letter-spacing: 3px;
+
+      text-transform: uppercase;
+    }
+
+    .hero h1 {
+      position: relative;
+
+      max-width: 950px;
+
+      margin: 18px 0 25px;
+
+      font-size: clamp(52px, 8vw, 105px);
+
+      line-height: 0.92;
+
+      letter-spacing: -4px;
+    }
+
+    .hero h1 span {
+      color: var(--gold);
+
+      text-shadow:
+        0 0 25px rgba(212, 175, 55, 0.18);
+    }
+
+    .hero p {
+      position: relative;
+
+      max-width: 600px;
+
+      color: var(--muted);
+
+      font-size: 18px;
+
+      line-height: 1.7;
+    }
+
+
+    /* =========================
+       GOLD LINE
+    ========================== */
+
+    .gold-line {
+      width: 100%;
+      height: 1px;
+
+      background:
+        linear-gradient(
+          90deg,
+          transparent,
+          var(--gold),
+          transparent
+        );
+
+      opacity: 0.35;
+    }
+
+
+    /* =========================
+       EVENTS
+    ========================== */
+
+    .events {
+      padding: 90px 6% 120px;
+    }
+
+    .section-top {
+      margin-bottom: 45px;
+    }
+
+    .section-top h2 {
+      margin-top: 8px;
+
+      font-size: clamp(36px, 5vw, 58px);
+
+      letter-spacing: -2px;
+    }
+
+    .events-grid {
+      max-width: 1250px;
+
+      display: grid;
+
+      grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+      gap: 28px;
+    }
+
+
+    /* =========================
+       EVENT CARD
+    ========================== */
+
+    .event-card {
+      background: var(--card);
+
+      border: 1px solid var(--border);
+
+      border-radius: 18px;
+
+      overflow: hidden;
+
+      backdrop-filter: blur(14px);
+
+      transition:
+        transform 0.35s ease,
+        border-color 0.35s ease,
+        box-shadow 0.35s ease;
+    }
+
+    .event-card:hover {
+      transform: translateY(-7px);
+
+      border-color:
+        rgba(212, 175, 55, 0.55);
+
+      box-shadow:
+        0 20px 60px rgba(0, 0, 0, 0.45),
+        0 0 30px rgba(212, 175, 55, 0.08);
+    }
+
+
+    /* =========================
+       IMAGE
+    ========================== */
+
+    .event-image {
+      position: relative;
+
+      aspect-ratio: 16 / 9;
+
+      overflow: hidden;
+
+      background: #111;
+    }
+
+    .event-image::after {
+      content: "";
+
+      position: absolute;
+      inset: 0;
+
+      background:
+        linear-gradient(
+          to top,
+          rgba(0, 0, 0, 0.7),
+          transparent 55%
+        );
+    }
+
+    .event-image img {
+      height: 100%;
+
+      object-fit: cover;
+
+      transition: transform 0.5s ease;
+    }
+
+    .event-card:hover
+    .event-image img {
+      transform: scale(1.06);
+    }
+
+
+    /* =========================
+       DATE
+    ========================== */
+
+    .event-date {
+      position: absolute;
+
+      top: 18px;
+      left: 18px;
+
+      z-index: 2;
+
+      padding: 9px 13px;
+
+      border-radius: 8px;
+
+      background: rgba(0, 0, 0, 0.85);
+
+      border: 1px solid
+        rgba(212, 175, 55, 0.5);
+
+      color: var(--gold-light);
+
+      font-size: 11px;
+
+      font-weight: 900;
+
+      letter-spacing: 1px;
+    }
+
+
+    /* =========================
+       CONTENT
+    ========================== */
+
+    .event-content {
+      padding: 28px;
+    }
+
+    .event-type {
+      color: var(--gold);
+
+      font-size: 10px;
+
+      font-weight: 800;
+
+      letter-spacing: 2px;
+    }
+
+    .event-content h3 {
+      margin: 8px 0 15px;
+
+      font-size: 30px;
+
+      letter-spacing: -1px;
+    }
+
+    .event-meta {
+      display: flex;
+
+      gap: 18px;
+
+      flex-wrap: wrap;
+
+      color: rgba(245, 241, 230, 0.65);
+
+      font-size: 13px;
+    }
+
+    .event-description {
+      margin: 20px 0 25px;
+
+      color: var(--muted);
+
+      font-size: 14px;
+
+      line-height: 1.7;
+    }
+
+
+    /* =========================
+       CTA
+    ========================== */
+
+    .event-btn {
+      display: inline-flex;
+
+      align-items: center;
+      justify-content: center;
+
+      padding: 13px 21px;
+
+      border-radius: 8px;
+
+      background: var(--gold);
+
+      color: #080808;
+
+      font-size: 13px;
+
+      font-weight: 900;
+
+      transition:
+        0.25s ease;
+
+      box-shadow:
+        0 0 0 rgba(212, 175, 55, 0);
+    }
+
+    .event-btn:hover {
+      background: var(--gold-light);
+
+      transform: translateY(-2px);
+
+      box-shadow:
+        0 8px 25px
+        rgba(212, 175, 55, 0.18);
+    }
+
+
+    /* =========================
+       FOOTER
+    ========================== */
+
+    footer {
+      padding: 35px 6%;
+
+      border-top:
+        1px solid rgba(212, 175, 55, 0.12);
+
+      color: rgba(245, 241, 230, 0.4);
+
+      font-size: 13px;
+    }
+
+
+    /* =========================
+       MOBILE
+    ========================== */
+
+    @media (max-width: 800px) {
+
+      .header {
+        padding: 20px 5%;
+      }
+
+      .hero {
+        min-height: 65vh;
+
+        padding:
+          80px 5%
+          70px;
+      }
+
+      .hero h1 {
+        font-size: 55px;
+
+        letter-spacing: -2.5px;
+      }
+
+      .hero p {
+        font-size: 16px;
+      }
+
+      .events {
+        padding:
+          65px 5%
+          90px;
+      }
+
+      .events-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .event-content {
+        padding: 23px;
+      }
+    }
+
+    @media (max-width: 480px) {
+
+      .hero h1 {
+        font-size: 45px;
+      }
+
+      .event-content h3 {
+        font-size: 26px;
+      }
+
+      .event-meta {
+        flex-direction: column;
+
+        gap: 6px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+
+  <header class="header">
+
+    <a href="index.html" class="logo">
+      MYSTERIA
+    </a>
+
+    <a href="index.html" class="back">
+      ← Back to Café
+    </a>
+
+  </header>
+
+
+  <!-- HERO -->
+
+  <section class="hero">
+
+    <span class="eyebrow">
+      Cafe Mysteria · Varanasi
+    </span>
+
+    <h1>
+      What's Happening<br>
+      <span>at Mysteria?</span>
+    </h1>
+
+    <p>
+      Discover upcoming events, special nights and
+      experiences at Cafe Mysteria.
+    </p>
+
+  </section>
+
+
+  <div class="gold-line"></div>
+
+
+  <!-- EVENTS -->
+
+  <section class="events">
+
+    <div class="section-top">
+
+      <span class="eyebrow">
+        Upcoming
+      </span>
+
+      <h2>
+        Events & Experiences
+      </h2>
+
+    </div>
+
+
+    <div class="events-grid">
+
+
+      <!-- EVENT 1 -->
+
+      <article class="event-card">
+
+        <div class="event-image">
+
+          <img
+            src="YOUR-EVENT-IMAGE.jpg"
+            alt="Cafe Mysteria event"
+          >
+
+          <span class="event-date">
+            AUG 24
+          </span>
+
+        </div>
+
+
+        <div class="event-content">
+
+          <span class="event-type">
+            SPECIAL EVENT
+          </span>
+
+          <h3>
+            Event Name
+          </h3>
+
+
+          <div class="event-meta">
+
+            <span>
+              📅 August 24
+            </span>
+
+            <span>
+              🕐 7:00 PM
+            </span>
+
+            <span>
+              📍 Mysteria
+            </span>
+
+          </div>
+
+
+          <p class="event-description">
+            Join us at Mysteria for an evening of
+            food, games and a memorable experience.
+          </p>
+
+
+          <a
+            href="https://wa.me/919511119561"
+            class="event-btn"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Reserve Your Spot →
+          </a>
+
+        </div>
+
+      </article>
+
+
+
+      <!-- EVENT 2 -->
+
+      <article class="event-card">
+
+        <div class="event-image">
+
+          <img
+            src="YOUR-EVENT-IMAGE-2.jpg"
+            alt="Cafe Mysteria upcoming event"
+          >
+
+          <span class="event-date">
+            AUG 30
+          </span>
+
+        </div>
+
+
+        <div class="event-content">
+
+          <span class="event-type">
+            UPCOMING
+          </span>
+
+          <h3>
+            Another Event
+          </h3>
+
+
+          <div class="event-meta">
+
+            <span>
+              📅 August 30
+            </span>
+
+            <span>
+              🕐 8:00 PM
+            </span>
+
+            <span>
+              📍 Mysteria
+            </span>
+
+          </div>
+
+
+          <p class="event-description">
+            More details about this experience
+            will be available soon.
+          </p>
+
+
+          <a
+            href="https://wa.me/919511119561"
+            class="event-btn"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Know More →
+          </a>
+
+        </div>
+
+      </article>
+
+
+    </div>
+
+  </section>
+
+
+  <!-- FOOTER -->
+
+  <footer>
+    © 2026 Cafe Mysteria · Varanasi
+  </footer>
+
+
+  <!-- JS -->
+
+  <script>
+
+    // Subtle reveal animation
+
+    const cards =
+      document.querySelectorAll(".event-card");
+
+    const observer =
+      new IntersectionObserver(
+        (entries) => {
+
+          entries.forEach((entry) => {
+
+            if (entry.isIntersecting) {
+
+              entry.target.style.opacity = "1";
+              entry.target.style.transform =
+                "translateY(0)";
+
+            }
+
+          });
+
+        },
+        {
+          threshold: 0.12
+        }
+      );
+
+
+    cards.forEach((card) => {
+
+      card.style.opacity = "0";
+
+      card.style.transform =
+        "translateY(25px)";
+
+      card.style.transition =
+        "opacity 0.7s ease, transform 0.7s ease";
+
+      observer.observe(card);
+
+    });
+
+
+    // Broken image fallback
+
+    document
+      .querySelectorAll(".event-image img")
+      .forEach((img) => {
+
+        img.addEventListener("error", () => {
+
+          img.style.display = "none";
+
+          img.parentElement.style.background =
+            "linear-gradient(135deg, #0b0b0b, #191600)";
+
+        });
+
+      });
+
+  </script>
+
+</body>
+</html>
